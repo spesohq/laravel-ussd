@@ -8,6 +8,10 @@ All notable changes to `laravel Ussd` will be documented in this file.
 - Add `Record::locale()` and `Record::setLocale()` to persist a session's chosen locale; `Ussd` now applies it automatically on subsequent requests, resetting to the application's configured default locale for sessions that haven't set one, so a locale never leaks from one session into another in long-running processes (e.g. Octane, queue workers).
 - Add a `#[Back]` attribute for back navigation. `Ussd` maintains a per-session history stack, pushing the outgoing state on every `Transition` and popping it on a matching `Back`.
 - Add a `ussd:graph` artisan command that renders a Mermaid state diagram of a flow's `Transition`, `Back` and `Terminate` attributes.
+- Add built-in `Response` implementations for common gateways: `Speso\Ussd\Responses\AfricasTalkingResponse` (plain-text `CON`/`END`), `Speso\Ussd\Responses\NsanoResponse` (`USSDResp` JSON), `Speso\Ussd\Responses\NaloResponse` (`USERID`/`MSISDN`/`USERDATA`/`MSG`/`MSGTYPE` JSON), `Speso\Ussd\Responses\MoolreResponse` (`message`/`reply` JSON) and `Speso\Ussd\Responses\ArkeselResponse` (`sessionID`/`userID`/`msisdn`/`message`/`continueSession` JSON).
+
+### Fixed
+- Fix the readme's Nsano configurator example, which referenced an undefined `$termination` variable and a nonexistent `setResponse()` method (the real method is `useResponse()`).
 
 ## [v3.0.0] - 2026-07-30
 ### Changed
