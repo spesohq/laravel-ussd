@@ -1,14 +1,14 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Attributes\Truncate;
-use Sparors\Ussd\Attributes\Transition;
-use Sparors\Ussd\Context;
-use Sparors\Ussd\Contracts\InitialState;
-use Sparors\Ussd\Decisions\Equal;
-use Sparors\Ussd\Menu;
-use Sparors\Ussd\Record;
+use Speso\Ussd\Attributes\Truncate;
+use Speso\Ussd\Attributes\Transition;
+use Speso\Ussd\Context;
+use Speso\Ussd\Contracts\InitialState;
+use Speso\Ussd\Decisions\Equal;
+use Speso\Ussd\Menu;
+use Speso\Ussd\Record;
 
 #[Truncate(18, '#.More', [Equal::class, '#'])]
 #[Transition(PetitAction::class, [Equal::class, 1], [self::class, 'callback'])]

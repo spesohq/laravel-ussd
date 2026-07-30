@@ -1,11 +1,11 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Integration;
+namespace Speso\Ussd\Tests\Integration;
 
-use Sparors\Ussd\Record;
-use Sparors\Ussd\Tests\TestCase;
-use Sparors\Ussd\Tests\Dummy\GrandAction;
-use Sparors\Ussd\Tests\Dummy\FinishingState;
+use Speso\Ussd\Record;
+use Speso\Ussd\Tests\TestCase;
+use Speso\Ussd\Tests\Dummy\GrandAction;
+use Speso\Ussd\Tests\Dummy\FinishingState;
 
 final class ActionTest extends TestCase
 {

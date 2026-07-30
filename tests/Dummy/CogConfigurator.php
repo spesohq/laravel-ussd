@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Contracts\Configurator;
-use Sparors\Ussd\Ussd;
+use Speso\Ussd\Contracts\Configurator;
+use Speso\Ussd\Ussd;
 
 class CogConfigurator implements Configurator
 {

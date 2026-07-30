@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Contracts\Action;
-use Sparors\Ussd\Record;
+use Speso\Ussd\Contracts\Action;
+use Speso\Ussd\Record;
 
 class GrandAction implements Action
 {

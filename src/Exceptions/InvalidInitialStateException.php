@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Exceptions;
+namespace Speso\Ussd\Exceptions;
 
-use Sparors\Ussd\Contracts\InitialAction;
-use Sparors\Ussd\Contracts\InitialState;
+use Speso\Ussd\Contracts\InitialAction;
+use Speso\Ussd\Contracts\InitialState;
 
 class InvalidInitialStateException extends UssdException
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Unit;
+namespace Speso\Ussd\Tests\Unit;
 
 use Orchestra\Testbench\TestCase;
-use Sparors\Ussd\Tests\Dummy\BeginningState;
+use Speso\Ussd\Tests\Dummy\BeginningState;
 
 final class StateTest extends TestCase
 {

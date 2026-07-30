@@ -1,20 +1,20 @@
 {
-    "name": "sparors/laravel-ussd",
+    "name": "speso/laravel-ussd",
     "description": "Create ussd with ease",
     "license": "MIT",
     "authors": [
         {
             "name": "Isaac Sai",
             "email": "isaacsai030@gmail.com",
-            "homepage": "https://sparors.github.io"
+            "homepage": "https://speso.com"
         },
         {
             "name": "Benjamin Manford",
             "email": "benjaminmanford@gmail.com",
-            "homepage": "https://sparors.github.io"
+            "homepage": "https://speso.com"
         }
     ],
-    "homepage": "https://github.com/sparors/laravel-ussd",
+    "homepage": "https://github.com/spesohq/laravel-ussd",
     "keywords": ["Laravel", "Ussd"],
     "require": {
         "php": "^8.0",
@@ -27,18 +27,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Sparors\\Ussd\\": "src/"
+            "Speso\\Ussd\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sparors\\Ussd\\Tests\\": "tests"
+            "Speso\\Ussd\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Sparors\\Ussd\\UssdServiceProvider"
+                "Speso\\Ussd\\UssdServiceProvider"
             ]
         }
     },

@@ -1,11 +1,11 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Contracts\ContinueState;
-use Sparors\Ussd\Contracts\Decision;
-use Sparors\Ussd\Decisions\Equal;
-use Sparors\Ussd\Menu;
+use Speso\Ussd\Contracts\ContinueState;
+use Speso\Ussd\Contracts\Decision;
+use Speso\Ussd\Decisions\Equal;
+use Speso\Ussd\Menu;
 
 class ContinuingState implements ContinueState
 {

@@ -1,25 +1,25 @@
 <?php
 
-namespace Sparors\Ussd\Traits;
+namespace Speso\Ussd\Traits;
 
 use Closure;
 use DateInterval;
 use DateTimeInterface;
 use Illuminate\Support\Facades\App;
-use Sparors\Ussd\Context;
-use Sparors\Ussd\ContinuingMode;
-use Sparors\Ussd\Contracts\Configurator;
-use Sparors\Ussd\Contracts\ContinueState;
-use Sparors\Ussd\Contracts\ExceptionHandler;
-use Sparors\Ussd\Contracts\InitialAction;
-use Sparors\Ussd\Contracts\InitialState;
-use Sparors\Ussd\Contracts\Response;
-use Sparors\Ussd\Exceptions\InvalidConfiguratorException;
-use Sparors\Ussd\Exceptions\InvalidContinueStateException;
-use Sparors\Ussd\Exceptions\InvalidContinuingModeException;
-use Sparors\Ussd\Exceptions\InvalidExceptionHandlerException;
-use Sparors\Ussd\Exceptions\InvalidInitialStateException;
-use Sparors\Ussd\Exceptions\InvalidResponseException;
+use Speso\Ussd\Context;
+use Speso\Ussd\ContinuingMode;
+use Speso\Ussd\Contracts\Configurator;
+use Speso\Ussd\Contracts\ContinueState;
+use Speso\Ussd\Contracts\ExceptionHandler;
+use Speso\Ussd\Contracts\InitialAction;
+use Speso\Ussd\Contracts\InitialState;
+use Speso\Ussd\Contracts\Response;
+use Speso\Ussd\Exceptions\InvalidConfiguratorException;
+use Speso\Ussd\Exceptions\InvalidContinueStateException;
+use Speso\Ussd\Exceptions\InvalidContinuingModeException;
+use Speso\Ussd\Exceptions\InvalidExceptionHandlerException;
+use Speso\Ussd\Exceptions\InvalidInitialStateException;
+use Speso\Ussd\Exceptions\InvalidResponseException;
 
 trait UssdBuilder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sparors\Ussd\Tests;
+namespace Speso\Ussd\Tests;
 
 use Closure;
 use DateInterval;
@@ -13,15 +13,15 @@ use InvalidArgumentException;
 use JsonSerializable;
 use PHPUnit\Framework\Assert;
 use ReflectionFunction;
-use Sparors\Ussd\Context;
-use Sparors\Ussd\Contracts\Configurator;
-use Sparors\Ussd\Contracts\ContinueState;
-use Sparors\Ussd\Contracts\ExceptionHandler;
-use Sparors\Ussd\Contracts\InitialAction;
-use Sparors\Ussd\Contracts\InitialState;
-use Sparors\Ussd\Contracts\Response;
-use Sparors\Ussd\Record;
-use Sparors\Ussd\Ussd;
+use Speso\Ussd\Context;
+use Speso\Ussd\Contracts\Configurator;
+use Speso\Ussd\Contracts\ContinueState;
+use Speso\Ussd\Contracts\ExceptionHandler;
+use Speso\Ussd\Contracts\InitialAction;
+use Speso\Ussd\Contracts\InitialState;
+use Speso\Ussd\Contracts\Response;
+use Speso\Ussd\Record;
+use Speso\Ussd\Ussd;
 
 class Testing
 {

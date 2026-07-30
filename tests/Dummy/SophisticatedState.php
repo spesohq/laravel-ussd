@@ -1,14 +1,14 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Attributes\Truncate;
-use Sparors\Ussd\Attributes\Paginate;
-use Sparors\Ussd\Attributes\Terminate;
-use Sparors\Ussd\Contracts\InitialState;
-use Sparors\Ussd\Decisions\Equal;
-use Sparors\Ussd\Menu;
-use Sparors\Ussd\Traits\WithPagination;
+use Speso\Ussd\Attributes\Truncate;
+use Speso\Ussd\Attributes\Paginate;
+use Speso\Ussd\Attributes\Terminate;
+use Speso\Ussd\Contracts\InitialState;
+use Speso\Ussd\Decisions\Equal;
+use Speso\Ussd\Menu;
+use Speso\Ussd\Traits\WithPagination;
 
 #[Terminate]
 #[Truncate(150, '#.More', [Equal::class, '#'])]

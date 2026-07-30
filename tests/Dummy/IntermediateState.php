@@ -1,14 +1,14 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Attributes\Paginate;
-use Sparors\Ussd\Attributes\Transition;
-use Sparors\Ussd\Menu;
-use Sparors\Ussd\Contracts\State;
-use Sparors\Ussd\Decisions\Equal;
-use Sparors\Ussd\Record;
-use Sparors\Ussd\Traits\WithPagination;
+use Speso\Ussd\Attributes\Paginate;
+use Speso\Ussd\Attributes\Transition;
+use Speso\Ussd\Menu;
+use Speso\Ussd\Contracts\State;
+use Speso\Ussd\Decisions\Equal;
+use Speso\Ussd\Record;
+use Speso\Ussd\Traits\WithPagination;
 
 #[Paginate([Equal::class, '#'], [Equal::class, '0'])]
 #[Transition(GrandAction::class, [Equal::class, 1], DoTheThing::class)]

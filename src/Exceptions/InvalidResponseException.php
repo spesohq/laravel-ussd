@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Exceptions;
+namespace Speso\Ussd\Exceptions;
 
-use Sparors\Ussd\Contracts\Response;
+use Speso\Ussd\Contracts\Response;
 
 class InvalidResponseException extends UssdException
 {

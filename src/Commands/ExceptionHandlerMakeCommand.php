@@ -1,6 +1,6 @@
 <?php
 
-namespace Sparors\Ussd\Commands;
+namespace Speso\Ussd\Commands;
 
 class ExceptionHandlerMakeCommand extends ExceptionHandlerCommand
 {

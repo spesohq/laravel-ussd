@@ -1,6 +1,6 @@
 <?php
 
-namespace Sparors\Ussd;
+namespace Speso\Ussd;
 
 use Closure;
 use DateInterval;
@@ -9,26 +9,26 @@ use Exception;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 use ReflectionClass;
-use Sparors\Ussd\Attributes\Paginate;
-use Sparors\Ussd\Attributes\Terminate;
-use Sparors\Ussd\Attributes\Transition;
-use Sparors\Ussd\Attributes\Truncate;
-use Sparors\Ussd\Contracts\Action;
-use Sparors\Ussd\Contracts\ContinueState;
-use Sparors\Ussd\Contracts\ExceptionHandler;
-use Sparors\Ussd\Contracts\InitialAction;
-use Sparors\Ussd\Contracts\InitialState;
-use Sparors\Ussd\Contracts\Response;
-use Sparors\Ussd\Contracts\State;
-use Sparors\Ussd\Exceptions\ActiveStateNotFoundException;
-use Sparors\Ussd\Exceptions\InvalidContinueStateException;
-use Sparors\Ussd\Exceptions\InvalidStateException;
-use Sparors\Ussd\Exceptions\NextStateNotFoundException;
-use Sparors\Ussd\Exceptions\NoInitialStateProvided;
-use Sparors\Ussd\Tests\PendingTest;
-use Sparors\Ussd\Traits\Conditionable;
-use Sparors\Ussd\Traits\UssdBuilder;
-use Sparors\Ussd\Traits\WithPagination;
+use Speso\Ussd\Attributes\Paginate;
+use Speso\Ussd\Attributes\Terminate;
+use Speso\Ussd\Attributes\Transition;
+use Speso\Ussd\Attributes\Truncate;
+use Speso\Ussd\Contracts\Action;
+use Speso\Ussd\Contracts\ContinueState;
+use Speso\Ussd\Contracts\ExceptionHandler;
+use Speso\Ussd\Contracts\InitialAction;
+use Speso\Ussd\Contracts\InitialState;
+use Speso\Ussd\Contracts\Response;
+use Speso\Ussd\Contracts\State;
+use Speso\Ussd\Exceptions\ActiveStateNotFoundException;
+use Speso\Ussd\Exceptions\InvalidContinueStateException;
+use Speso\Ussd\Exceptions\InvalidStateException;
+use Speso\Ussd\Exceptions\NextStateNotFoundException;
+use Speso\Ussd\Exceptions\NoInitialStateProvided;
+use Speso\Ussd\Tests\PendingTest;
+use Speso\Ussd\Traits\Conditionable;
+use Speso\Ussd\Traits\UssdBuilder;
+use Speso\Ussd\Traits\WithPagination;
 
 class Ussd
 {
@@ -234,7 +234,7 @@ class Ussd
         foreach ($attributes as $attribute) {
             $paginate = $attribute->newInstance();
 
-            foreach(['next', 'previous'] as $key) {
+            foreach (['next', 'previous'] as $key) {
                 if (is_array($paginate->{$key})) {
                     $paginate->{$key} = new $paginate->{$key}[0](...array_slice($paginate->{$key}, 1));
                 } elseif (is_string($paginate->{$key})) {
@@ -287,7 +287,7 @@ class Ussd
 
         $attributes = $reflected->getAttributes(Transition::class);
 
-        foreach($attributes as $attribute) {
+        foreach ($attributes as $attribute) {
             $transition = $attribute->newInstance();
 
             if (is_array($transition->match)) {

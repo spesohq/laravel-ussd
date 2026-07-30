@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Tests;
+namespace Speso\Ussd\Tests;
 
 use Orchestra\Testbench\TestCase as Testbench;
-use Sparors\Ussd\UssdServiceProvider;
+use Speso\Ussd\UssdServiceProvider;
 
 abstract class TestCase extends Testbench
 {

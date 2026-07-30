@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Decisions;
+namespace Speso\Ussd\Decisions;
 
-use Sparors\Ussd\Contracts\Decision;
+use Speso\Ussd\Contracts\Decision;
 
 class NotBetween implements Decision
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Unit;
+namespace Speso\Ussd\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Sparors\Ussd\Record;
-use Sparors\Ussd\Tests\Dummy\FinishingState;
-use Sparors\Ussd\Tests\Dummy\GrandAction;
-use Sparors\Ussd\Tests\Dummy\PetitAction;
-use Sparors\Ussd\Tests\Dummy\IntermediateState;
+use Speso\Ussd\Record;
+use Speso\Ussd\Tests\Dummy\FinishingState;
+use Speso\Ussd\Tests\Dummy\GrandAction;
+use Speso\Ussd\Tests\Dummy\PetitAction;
+use Speso\Ussd\Tests\Dummy\IntermediateState;
 
 final class ActionTest extends TestCase
 {

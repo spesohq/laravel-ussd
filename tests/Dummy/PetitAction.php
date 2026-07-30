@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Contracts\Action;
+use Speso\Ussd\Contracts\Action;
 
 class PetitAction implements Action
 {

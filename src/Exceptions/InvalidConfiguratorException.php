@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Exceptions;
+namespace Speso\Ussd\Exceptions;
 
-use Sparors\Ussd\Contracts\Configurator;
+use Speso\Ussd\Contracts\Configurator;
 
 class InvalidConfiguratorException extends UssdException
 {

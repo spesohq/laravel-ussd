@@ -1,6 +1,6 @@
 <?php
 
-namespace Sparors\Ussd;
+namespace Speso\Ussd;
 
 use DateInterval;
 use DateTimeInterface;

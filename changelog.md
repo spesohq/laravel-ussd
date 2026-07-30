@@ -4,6 +4,14 @@ All notable changes to `laravel Ussd` will be documented in this file.
 
 ## [Unreleased]
 
+## [v3.0.0] - 2026-07-30
+### Changed
+- Renamed package from `sparors/laravel-ussd` to `speso/laravel-ussd`.
+- Renamed namespace from `Sparors\Ussd` to `Speso\Ussd`. See the readme for migration steps.
+
+### Added
+- Add Laravel 13 support.
+
 ## [v3.0.0-beta.3] - 2025-03-20
 ### Added
 - Add Laravel 12 support.
@@ -111,7 +119,8 @@ All notable changes to `laravel Ussd` will be documented in this file.
 - Ussd config to allow developers customize behaviour
 - Ussd service Provider class to allow laravel know how to integrate the package
 
-[Unreleased]: ../../compare/v3.0.0-beta.1...HEAD
+[Unreleased]: ../../compare/v3.0.0...HEAD
+[v3.0.0]: ../../compare/v3.0.0-beta.3...v3.0.0
 [v3.0.0-beta.1]: ../../compare/v2.5.0...v3.0.0-beta.1
 [v2.5.0]: ../../compare/v2.4.2...v2.5.0
 [v2.4.2]: ../../compare/v2.4.1...v2.4.2

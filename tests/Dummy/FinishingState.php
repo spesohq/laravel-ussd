@@ -1,11 +1,11 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Attributes\Terminate;
-use Sparors\Ussd\Contracts\State;
-use Sparors\Ussd\Menu;
-use Sparors\Ussd\Record;
+use Speso\Ussd\Attributes\Terminate;
+use Speso\Ussd\Contracts\State;
+use Speso\Ussd\Menu;
+use Speso\Ussd\Record;
 
 #[Terminate]
 class FinishingState implements State

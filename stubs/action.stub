@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Sparors\Ussd\Contracts\Action;
+use Speso\Ussd\Contracts\Action;
 
 class {{ class }} implements Action
 {

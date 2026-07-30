@@ -1,21 +1,21 @@
 <?php
 
-namespace Sparors\Ussd;
+namespace Speso\Ussd;
 
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
-use Sparors\Ussd\Commands\ActionCommand;
-use Sparors\Ussd\Commands\ActionMakeCommand;
-use Sparors\Ussd\Commands\ConfiguratorCommand;
-use Sparors\Ussd\Commands\ConfiguratorMakeCommand;
-use Sparors\Ussd\Commands\DecisionCommand;
-use Sparors\Ussd\Commands\DecisionMakeCommand;
-use Sparors\Ussd\Commands\ExceptionHandlerCommand;
-use Sparors\Ussd\Commands\ExceptionHandlerMakeCommand;
-use Sparors\Ussd\Commands\ResponseCommand;
-use Sparors\Ussd\Commands\ResponseMakeCommand;
-use Sparors\Ussd\Commands\StateCommand;
-use Sparors\Ussd\Commands\StateMakeCommand;
+use Speso\Ussd\Commands\ActionCommand;
+use Speso\Ussd\Commands\ActionMakeCommand;
+use Speso\Ussd\Commands\ConfiguratorCommand;
+use Speso\Ussd\Commands\ConfiguratorMakeCommand;
+use Speso\Ussd\Commands\DecisionCommand;
+use Speso\Ussd\Commands\DecisionMakeCommand;
+use Speso\Ussd\Commands\ExceptionHandlerCommand;
+use Speso\Ussd\Commands\ExceptionHandlerMakeCommand;
+use Speso\Ussd\Commands\ResponseCommand;
+use Speso\Ussd\Commands\ResponseMakeCommand;
+use Speso\Ussd\Commands\StateCommand;
+use Speso\Ussd\Commands\StateMakeCommand;
 
 class UssdServiceProvider extends ServiceProvider
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Exceptions;
+namespace Speso\Ussd\Exceptions;
 
-use Sparors\Ussd\Contracts\ContinueState;
+use Speso\Ussd\Contracts\ContinueState;
 
 class InvalidContinueStateException extends UssdException
 {

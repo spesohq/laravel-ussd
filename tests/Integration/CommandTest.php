@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Integration;
+namespace Speso\Ussd\Tests\Integration;
 
-use Sparors\Ussd\Tests\TestCase;
+use Speso\Ussd\Tests\TestCase;
 use Illuminate\Support\Facades\File;
 
 final class CommandTest extends TestCase

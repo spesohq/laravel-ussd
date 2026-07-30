@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Dummy;
+namespace Speso\Ussd\Tests\Dummy;
 
-use Sparors\Ussd\Record;
+use Speso\Ussd\Record;
 
 class DoTheThing
 {

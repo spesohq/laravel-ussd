@@ -1,10 +1,10 @@
 <?php
 
-namespace Sparors\Ussd\Traits;
+namespace Speso\Ussd\Traits;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
-use Sparors\Ussd\Record;
+use Speso\Ussd\Record;
 
 trait WithPagination
 {

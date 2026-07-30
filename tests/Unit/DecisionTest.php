@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Unit;
+namespace Speso\Ussd\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Sparors\Ussd\Decisions\Between;
+use Speso\Ussd\Decisions\Between;
 
 final class DecisionTest extends TestCase
 {

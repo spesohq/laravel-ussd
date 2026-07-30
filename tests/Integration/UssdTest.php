@@ -1,18 +1,18 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Integration;
+namespace Speso\Ussd\Tests\Integration;
 
 use Exception;
-use Sparors\Ussd\Ussd;
-use Sparors\Ussd\Context;
-use Sparors\Ussd\Tests\TestCase;
-use Sparors\Ussd\Tests\Dummy\BeginningState;
-use Sparors\Ussd\Tests\Dummy\FinishingState;
-use Sparors\Ussd\Tests\Dummy\CogConfigurator;
+use Speso\Ussd\Ussd;
+use Speso\Ussd\Context;
+use Speso\Ussd\Tests\TestCase;
+use Speso\Ussd\Tests\Dummy\BeginningState;
+use Speso\Ussd\Tests\Dummy\FinishingState;
+use Speso\Ussd\Tests\Dummy\CogConfigurator;
 use PHPUnit\Framework\Attributes\DataProvider;
-use Sparors\Ussd\ContinuingMode;
-use Sparors\Ussd\Tests\Dummy\ContinuingState;
-use Sparors\Ussd\Tests\Dummy\SophisticatedState;
+use Speso\Ussd\ContinuingMode;
+use Speso\Ussd\Tests\Dummy\ContinuingState;
+use Speso\Ussd\Tests\Dummy\SophisticatedState;
 
 final class UssdTest extends TestCase
 {

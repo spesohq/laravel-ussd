@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd;
+namespace Speso\Ussd;
 
-use Sparors\Ussd\Exceptions\GlobaldentifierEmptyException;
-use Sparors\Ussd\Exceptions\UniqueIdentifierEmptyException;
+use Speso\Ussd\Exceptions\GlobaldentifierEmptyException;
+use Speso\Ussd\Exceptions\UniqueIdentifierEmptyException;
 
 class Context
 {

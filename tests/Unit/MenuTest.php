@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Unit;
+namespace Speso\Ussd\Tests\Unit;
 
-use Sparors\Ussd\Menu;
+use Speso\Ussd\Menu;
 use PHPUnit\Framework\TestCase;
 
 final class MenuTest extends TestCase

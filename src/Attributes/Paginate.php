@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Attributes;
+namespace Speso\Ussd\Attributes;
 
 use Attribute;
-use Sparors\Ussd\Contracts\Decision;
+use Speso\Ussd\Contracts\Decision;
 
 #[Attribute(Attribute::TARGET_CLASS)]
 final class Paginate

@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Sparors\Ussd\Contracts\InitialAction;
+use Speso\Ussd\Contracts\InitialAction;
 
 class {{ class }} implements InitialAction
 {

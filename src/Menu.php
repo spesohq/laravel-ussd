@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd;
+namespace Speso\Ussd;
 
-use Sparors\Ussd\Traits\Conditionable;
-use Sparors\Ussd\Traits\MenuBuilder;
+use Speso\Ussd\Traits\Conditionable;
+use Speso\Ussd\Traits\MenuBuilder;
 use Stringable;
 
 class Menu implements Stringable

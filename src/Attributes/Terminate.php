@@ -1,6 +1,6 @@
 <?php
 
-namespace Sparors\Ussd\Attributes;
+namespace Speso\Ussd\Attributes;
 
 use Attribute;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Contracts;
+namespace Speso\Ussd\Contracts;
 
-use Sparors\Ussd\Ussd;
+use Speso\Ussd\Ussd;
 
 interface Configurator
 {

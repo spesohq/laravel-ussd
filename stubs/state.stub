@@ -2,8 +2,8 @@
 
 namespace {{ namespace }};
 
-use Sparors\Ussd\Menu;
-use Sparors\Ussd\Contracts\State;
+use Speso\Ussd\Menu;
+use Speso\Ussd\Contracts\State;
 
 class {{ class }} implements State
 {

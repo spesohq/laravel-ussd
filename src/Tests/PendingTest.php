@@ -1,18 +1,18 @@
 <?php
 
-namespace Sparors\Ussd\Tests;
+namespace Speso\Ussd\Tests;
 
 use Closure;
 use DateInterval;
 use DateTimeInterface;
 use Illuminate\Support\Str;
-use Sparors\Ussd\ContinuingMode;
-use Sparors\Ussd\Contracts\Configurator;
-use Sparors\Ussd\Contracts\ContinueState;
-use Sparors\Ussd\Contracts\ExceptionHandler;
-use Sparors\Ussd\Contracts\InitialAction;
-use Sparors\Ussd\Contracts\InitialState;
-use Sparors\Ussd\Contracts\Response;
+use Speso\Ussd\ContinuingMode;
+use Speso\Ussd\Contracts\Configurator;
+use Speso\Ussd\Contracts\ContinueState;
+use Speso\Ussd\Contracts\ExceptionHandler;
+use Speso\Ussd\Contracts\InitialAction;
+use Speso\Ussd\Contracts\InitialState;
+use Speso\Ussd\Contracts\Response;
 
 class PendingTest
 {

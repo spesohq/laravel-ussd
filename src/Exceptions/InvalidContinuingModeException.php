@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Exceptions;
+namespace Speso\Ussd\Exceptions;
 
-use Sparors\Ussd\ContinuingMode;
+use Speso\Ussd\ContinuingMode;
 
 class InvalidContinuingModeException extends UssdException
 {

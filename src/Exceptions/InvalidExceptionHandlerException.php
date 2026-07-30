@@ -1,8 +1,8 @@
 <?php
 
-namespace Sparors\Ussd\Exceptions;
+namespace Speso\Ussd\Exceptions;
 
-use Sparors\Ussd\Contracts\ExceptionHandler;
+use Speso\Ussd\Contracts\ExceptionHandler;
 
 class InvalidExceptionHandlerException extends UssdException
 {

@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Sparors\Ussd\Contracts\Response;
+use Speso\Ussd\Contracts\Response;
 
 class {{ class }} implements Response
 {

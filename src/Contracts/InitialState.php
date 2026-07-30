@@ -1,6 +1,6 @@
 <?php
 
-namespace Sparors\Ussd\Contracts;
+namespace Speso\Ussd\Contracts;
 
 interface InitialState extends State
 {

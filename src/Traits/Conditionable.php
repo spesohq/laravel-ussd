@@ -1,6 +1,6 @@
 <?php
 
-namespace Sparors\Ussd\Traits;
+namespace Speso\Ussd\Traits;
 
 trait Conditionable
 {

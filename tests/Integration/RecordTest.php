@@ -1,9 +1,9 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Integration;
+namespace Speso\Ussd\Tests\Integration;
 
-use Sparors\Ussd\Record;
-use Sparors\Ussd\Tests\TestCase;
+use Speso\Ussd\Record;
+use Speso\Ussd\Tests\TestCase;
 
 final class RecordTest extends TestCase
 {

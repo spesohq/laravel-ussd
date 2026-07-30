@@ -1,12 +1,12 @@
 <?php
 
-namespace Sparors\Ussd\Tests\Integration;
+namespace Speso\Ussd\Tests\Integration;
 
-use Sparors\Ussd\ContinuingMode;
-use Sparors\Ussd\Tests\Dummy\BeginningState;
-use Sparors\Ussd\Tests\Dummy\ContinuingState;
-use Sparors\Ussd\Tests\TestCase;
-use Sparors\Ussd\Ussd;
+use Speso\Ussd\ContinuingMode;
+use Speso\Ussd\Tests\Dummy\BeginningState;
+use Speso\Ussd\Tests\Dummy\ContinuingState;
+use Speso\Ussd\Tests\TestCase;
+use Speso\Ussd\Ussd;
 
 final class AssestionTest extends TestCase
 {
