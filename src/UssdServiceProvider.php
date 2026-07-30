@@ -12,6 +12,7 @@ use Speso\Ussd\Commands\DecisionCommand;
 use Speso\Ussd\Commands\DecisionMakeCommand;
 use Speso\Ussd\Commands\ExceptionHandlerCommand;
 use Speso\Ussd\Commands\ExceptionHandlerMakeCommand;
+use Speso\Ussd\Commands\GraphCommand;
 use Speso\Ussd\Commands\ResponseCommand;
 use Speso\Ussd\Commands\ResponseMakeCommand;
 use Speso\Ussd\Commands\StateCommand;
@@ -31,6 +32,8 @@ class UssdServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/ussd.php', 'ussd');
+
+        $this->app->instance('ussd.locale', $this->app->getLocale());
     }
 
     /** @return void */
@@ -53,6 +56,7 @@ class UssdServiceProvider extends ServiceProvider
             ConfiguratorMakeCommand::class,
             ExceptionHandlerCommand::class,
             ExceptionHandlerMakeCommand::class,
+            GraphCommand::class,
         ]);
 
         AboutCommand::add('USSD', [

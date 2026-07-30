@@ -137,9 +137,7 @@ class Ussd
 
         App::instance($record::class, $record);
 
-        if ($locale = $record->locale()) {
-            App::setLocale($locale);
-        }
+        App::setLocale($record->locale() ?? App::make('ussd.locale'));
 
         if ($record->has(static::INIT)) {
             $nextState = $record->get(static::LIVE);

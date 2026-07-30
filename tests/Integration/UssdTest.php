@@ -644,6 +644,29 @@ final class UssdTest extends TestCase
         );
     }
 
+    public function test_ussd_does_not_leak_a_locale_between_sessions()
+    {
+        Lang::addLines(['greeting.hello' => 'Hello'], 'en');
+        Lang::addLines(['greeting.hello' => 'Bonjour'], 'fr');
+
+        Ussd::build(Context::create('1111', '7890', '1'))->useInitialState(LocalizedState::class)->run();
+        Ussd::build(Context::create('1111', '7890', '2'))->useInitialState(LocalizedState::class)->run();
+
+        $this->assertEquals(
+            ['message' => 'Bonjour', 'terminating' => false],
+            Ussd::build(Context::create('1111', '7890', '3'))->useInitialState(LocalizedState::class)->run()
+        );
+
+        $this->assertEquals(
+            ['message' => 'Hello', 'terminating' => false],
+            Ussd::build(
+                Context::create('2222', '7890', '1')
+            )
+            ->useInitialState(LocalizedState::class)
+            ->run()
+        );
+    }
+
     public function test_ussd_can_navigate_back_to_the_previous_state()
     {
         $this->assertEquals(
