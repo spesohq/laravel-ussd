@@ -14,7 +14,10 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use Speso\Ussd\ContinuingMode;
 use Speso\Ussd\Tests\Dummy\ContinuingState;
 use Speso\Ussd\Tests\Dummy\LocalizedState;
+use Speso\Ussd\Tests\Dummy\LoneState;
 use Speso\Ussd\Tests\Dummy\SophisticatedState;
+use Speso\Ussd\Tests\Dummy\StartState;
+use Speso\Ussd\Record;
 
 final class UssdTest extends TestCase
 {
@@ -637,6 +640,59 @@ final class UssdTest extends TestCase
                 Context::create('2468', '7890', '3')
             )
             ->useInitialState(LocalizedState::class)
+            ->run()
+        );
+    }
+
+    public function test_ussd_can_navigate_back_to_the_previous_state()
+    {
+        $this->assertEquals(
+            ['message' => 'Start', 'terminating' => false],
+            Ussd::build(
+                Context::create('1357', '7890', '1')
+            )
+            ->useInitialState(StartState::class)
+            ->run()
+        );
+
+        $this->assertEquals(
+            ['message' => 'Middle', 'terminating' => false],
+            Ussd::build(
+                Context::create('1357', '7890', '1')
+            )
+            ->useInitialState(StartState::class)
+            ->run()
+        );
+
+        $this->assertEquals(
+            ['message' => 'Start', 'terminating' => false],
+            Ussd::build(
+                Context::create('1357', '7890', '0')
+            )
+            ->useInitialState(StartState::class)
+            ->run()
+        );
+
+        $this->assertTrue((new Record('array', '1357', '7890'))->get('went_back'));
+    }
+
+    public function test_ussd_falls_through_to_transition_when_back_stack_is_empty()
+    {
+        $this->assertEquals(
+            ['message' => 'Lone', 'terminating' => false],
+            Ussd::build(
+                Context::create('2143', '7890', '0')
+            )
+            ->useInitialState(LoneState::class)
+            ->run()
+        );
+
+        $this->assertEquals(
+            ['message' => 'End', 'terminating' => true],
+            Ussd::build(
+                Context::create('2143', '7890', '0')
+            )
+            ->useInitialState(LoneState::class)
             ->run()
         );
     }

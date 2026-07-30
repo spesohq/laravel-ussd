@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 use ReflectionClass;
+use Speso\Ussd\Attributes\Back;
 use Speso\Ussd\Attributes\Paginate;
 use Speso\Ussd\Attributes\Terminate;
 use Speso\Ussd\Attributes\Transition;
@@ -41,6 +42,7 @@ class Ussd
     private const HALT = '__halt__';
     private const CURB = '__curb__';
     private const LIVE = '__live__';
+    private const STACK = '__stack__';
 
     private Context $context;
     private ?string $storeName;
@@ -289,6 +291,34 @@ class Ussd
             }
         }
 
+        $attributes = $reflected->getAttributes(Back::class);
+
+        foreach ($attributes as $attribute) {
+            $back = $attribute->newInstance();
+
+            if (is_array($back->match)) {
+                $back->match = new $back->match[0](...array_slice($back->match, 1));
+            } elseif (is_string($back->match)) {
+                $back->match = new $back->match();
+            }
+
+            if ($back->match->decide($this->context->input())) {
+                /** @var Record */ $record = App::make(Record::class);
+
+                if ($previous = $this->popBackState($record)) {
+                    if ($back->callback) {
+                        if (is_array($back->callback) && is_string($back->callback[0])) {
+                            $back->callback[0] = App::make($back->callback[0]);
+                        }
+
+                        App::call($back->callback);
+                    }
+
+                    return $previous;
+                }
+            }
+        }
+
         $attributes = $reflected->getAttributes(Transition::class);
 
         foreach ($attributes as $attribute) {
@@ -309,11 +339,39 @@ class Ussd
                     App::call($transition->callback);
                 }
 
+                if ($transition->to !== $state::class) {
+                    /** @var Record */ $record = App::make(Record::class);
+                    $this->pushBackState($record, $state::class);
+                }
+
                 return $transition->to;
             }
         }
 
         throw new NextStateNotFoundException($state::class);
+    }
+
+    private function pushBackState(Record $record, string $state): void
+    {
+        $stack = $record->get(static::STACK, []);
+        $stack[] = $state;
+
+        $record->set(static::STACK, $stack);
+    }
+
+    private function popBackState(Record $record): ?string
+    {
+        $stack = $record->get(static::STACK, []);
+
+        if ([] === $stack) {
+            return null;
+        }
+
+        $previous = array_pop($stack);
+
+        $record->set(static::STACK, $stack);
+
+        return $previous;
     }
 
     private function actionable(string $class): string
