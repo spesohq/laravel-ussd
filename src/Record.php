@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Cache;
 
 class Record
 {
+    private const LOCALE = '__locale__';
+
     private Repository $repository;
 
     public function __construct(
@@ -88,6 +90,16 @@ class Record
         return array_values(
             (array) $this->repository->getMultiple($this->ids($keys, $public), $default)
         );
+    }
+
+    public function locale(): ?string
+    {
+        return $this->get(self::LOCALE);
+    }
+
+    public function setLocale(string $locale): bool
+    {
+        return $this->set(self::LOCALE, $locale);
     }
 
     public function increment(string $key, mixed $value = 1, bool $public = false): bool|int

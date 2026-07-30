@@ -3,6 +3,9 @@
 All notable changes to `laravel Ussd` will be documented in this file.
 
 ## [Unreleased]
+### Added
+- Add `Menu::trans()`, `Menu::transLine()` and `Menu::transChoice()` for building menu content from translation files.
+- Add `Record::locale()` and `Record::setLocale()` to persist a session's chosen locale; `Ussd` now applies it automatically on subsequent requests.
 
 ## [v3.0.0] - 2026-07-30
 ### Changed

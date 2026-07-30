@@ -60,4 +60,12 @@ final class RecordTest extends TestCase
         $this->assertEquals(18, $record->increment('age'));
         $this->assertEquals(17, $record->decrement('age'));
     }
+
+    public function test_record_can_persist_a_locale()
+    {
+        $record = new Record('array', '1234', 'abcd');
+        $this->assertNull($record->locale());
+        $record->setLocale('fr');
+        $this->assertEquals('fr', $record->locale());
+    }
 }

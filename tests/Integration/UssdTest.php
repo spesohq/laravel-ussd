@@ -3,6 +3,7 @@
 namespace Speso\Ussd\Tests\Integration;
 
 use Exception;
+use Illuminate\Support\Facades\Lang;
 use Speso\Ussd\Ussd;
 use Speso\Ussd\Context;
 use Speso\Ussd\Tests\TestCase;
@@ -12,6 +13,7 @@ use Speso\Ussd\Tests\Dummy\CogConfigurator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Speso\Ussd\ContinuingMode;
 use Speso\Ussd\Tests\Dummy\ContinuingState;
+use Speso\Ussd\Tests\Dummy\LocalizedState;
 use Speso\Ussd\Tests\Dummy\SophisticatedState;
 
 final class UssdTest extends TestCase
@@ -602,6 +604,39 @@ final class UssdTest extends TestCase
                 Context::create('1234', '7890', '#')
             )
             ->useInitialState(SophisticatedState::class)
+            ->run()
+        );
+    }
+
+    public function test_ussd_applies_a_persisted_locale_starting_the_next_request()
+    {
+        Lang::addLines(['greeting.hello' => 'Hello'], 'en');
+        Lang::addLines(['greeting.hello' => 'Bonjour'], 'fr');
+
+        $this->assertEquals(
+            ['message' => 'Hello', 'terminating' => false],
+            Ussd::build(
+                Context::create('2468', '7890', '1')
+            )
+            ->useInitialState(LocalizedState::class)
+            ->run()
+        );
+
+        $this->assertEquals(
+            ['message' => 'Hello', 'terminating' => false],
+            Ussd::build(
+                Context::create('2468', '7890', '2')
+            )
+            ->useInitialState(LocalizedState::class)
+            ->run()
+        );
+
+        $this->assertEquals(
+            ['message' => 'Bonjour', 'terminating' => false],
+            Ussd::build(
+                Context::create('2468', '7890', '3')
+            )
+            ->useInitialState(LocalizedState::class)
             ->run()
         );
     }
