@@ -1,7 +1,6 @@
 # Laravel Ussd
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-github]][link-github]
 
 Build Ussd (Unstructured Supplementary Service Data) applications with laravel without breaking a sweat.
@@ -51,11 +50,9 @@ If you discover any security related issues, please email services@speso.co inst
 MIT. Please see the [license file](LICENSE) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/speso/laravel-ussd.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/speso/laravel-ussd.svg?style=flat-square
 [ico-github]: https://img.shields.io/github/actions/workflow/status/spesohq/laravel-ussd/php.yml?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/speso/laravel-ussd
-[link-downloads]: https://packagist.org/packages/speso/laravel-ussd
 [link-github]: https://github.com/spesohq/laravel-ussd/actions/workflows/php.yml
 [link-wiki]: https://github.com/spesohq/laravel-ussd/wiki
 [link-author]: https://github.com/spesohq

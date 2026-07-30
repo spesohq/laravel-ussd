@@ -7,6 +7,7 @@ use DateInterval;
 use DateTimeInterface;
 use Exception;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
 use ReflectionClass;
 use Speso\Ussd\Attributes\Back;
@@ -21,6 +22,8 @@ use Speso\Ussd\Contracts\InitialAction;
 use Speso\Ussd\Contracts\InitialState;
 use Speso\Ussd\Contracts\Response;
 use Speso\Ussd\Contracts\State;
+use Speso\Ussd\Events\SessionTerminated;
+use Speso\Ussd\Events\StateEntered;
 use Speso\Ussd\Exceptions\ActiveStateNotFoundException;
 use Speso\Ussd\Exceptions\InvalidContinueStateException;
 use Speso\Ussd\Exceptions\InvalidStateException;
@@ -91,6 +94,10 @@ class Ussd
             [$message, $terminating] = $this->operate();
         } catch (Exception $exception) {
             [$message, $terminating] = $this->bail($exception);
+        }
+
+        if ($terminating) {
+            Event::dispatch(new SessionTerminated($this->context));
         }
 
         if (ContinuingMode::START !== $this->continuingMode) {
@@ -181,6 +188,8 @@ class Ussd
         $state = App::make($nextState);
 
         /** @var Menu */ $menu = App::call([$state, 'render']);
+
+        Event::dispatch(new StateEntered($state::class, $this->context));
 
         [$content, $more] = $this->limit($state, $menu);
 
