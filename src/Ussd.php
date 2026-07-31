@@ -185,6 +185,8 @@ class Ussd
             }
         }
 
+        App::setLocale($record->locale() ?? App::make('ussd.locale'));
+
         $state = App::make($nextState);
 
         /** @var Menu */ $menu = App::call([$state, 'render']);

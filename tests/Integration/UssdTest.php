@@ -611,7 +611,7 @@ final class UssdTest extends TestCase
         );
     }
 
-    public function test_ussd_applies_a_persisted_locale_starting_the_next_request()
+    public function test_ussd_applies_a_locale_change_within_the_same_request()
     {
         Lang::addLines(['greeting.hello' => 'Hello'], 'en');
         Lang::addLines(['greeting.hello' => 'Bonjour'], 'fr');
@@ -626,7 +626,7 @@ final class UssdTest extends TestCase
         );
 
         $this->assertEquals(
-            ['message' => 'Hello', 'terminating' => false],
+            ['message' => 'Bonjour', 'terminating' => false],
             Ussd::build(
                 Context::create('2468', '7890', '2')
             )
