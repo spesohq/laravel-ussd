@@ -15,6 +15,7 @@ use Speso\Ussd\Commands\ExceptionHandlerMakeCommand;
 use Speso\Ussd\Commands\GraphCommand;
 use Speso\Ussd\Commands\ResponseCommand;
 use Speso\Ussd\Commands\ResponseMakeCommand;
+use Speso\Ussd\Commands\SimulateCommand;
 use Speso\Ussd\Commands\StateCommand;
 use Speso\Ussd\Commands\StateMakeCommand;
 
@@ -57,6 +58,7 @@ class UssdServiceProvider extends ServiceProvider
             ExceptionHandlerCommand::class,
             ExceptionHandlerMakeCommand::class,
             GraphCommand::class,
+            SimulateCommand::class,
         ]);
 
         AboutCommand::add('USSD', [
