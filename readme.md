@@ -5,6 +5,21 @@
 
 Build Ussd (Unstructured Supplementary Service Data) applications with laravel without breaking a sweat.
 
+## Features
+
+- **Menus as classes** — define screens as `State` classes with a fluent `Menu` builder, and route between them declaratively with `#[Transition]` attributes.
+- **Conditional branching** — `Action` classes decide the next state at runtime (e.g. after an HTTP call), for flows that can't be expressed as static attributes.
+- **Back navigation** — a `#[Back]` attribute with an automatic per-session history stack, no manual bookkeeping.
+- **Configurators** — group and share repeated setup (response format, exception handling, etc.) across controllers.
+- **Localized menus** — build menu content from translation files, and persist a session's chosen language across requests.
+- **Encrypted session data** — store sensitive values (PINs, account numbers) encrypted at rest in the session `Record`.
+- **Built-in gateway responses** — ships `Response` classes for AfricasTalking, Nsano, Nalo, Moolre and Arkesel; scaffold your own for anything else.
+- **Flow visualization** — `ussd:graph` renders a Mermaid state diagram of a flow straight from its attributes.
+- **Interactive simulation** — `ussd:simulate` lets you walk a flow in the terminal like a real handset, no gateway or phone required.
+- **Testing utilities** — a fluent `Ussd::test()` API for asserting screens, context, and session state across multi-step conversations.
+- **Session events** — `StateEntered` and `SessionTerminated` events for logging or analytics, without touching core classes.
+- **Artisan generators** — scaffold states, actions, responses, decisions, configurators and exception handlers with commands like `ussd:state` and `ussd:action`.
+
 ## Installation
 
 You can install the package via composer:
