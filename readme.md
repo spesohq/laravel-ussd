@@ -16,6 +16,7 @@ Build Ussd (Unstructured Supplementary Service Data) applications with laravel w
 - **Built-in gateway responses** — ships `Response` classes for AfricasTalking, Nsano, Nalo, Moolre and Arkesel; scaffold your own for anything else.
 - **Flow visualization** — `ussd:graph` renders a Mermaid state diagram of a flow straight from its attributes.
 - **Interactive simulation** — `ussd:simulate` lets you walk a flow in the terminal like a real handset, no gateway or phone required.
+- **Flow linting** — `ussd:lint` catches dead ends, broken transitions, duplicate matches and unreachable states before they ship.
 - **Testing utilities** — a fluent `Ussd::test()` API for asserting screens, context, and session state across multi-step conversations.
 - **Session events** — `StateEntered` and `SessionTerminated` events for logging or analytics, without touching core classes.
 - **Artisan generators** — scaffold states, actions, responses, decisions, configurators and exception handlers with commands like `ussd:state` and `ussd:action`.
