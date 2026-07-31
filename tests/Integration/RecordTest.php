@@ -2,6 +2,7 @@
 
 namespace Speso\Ussd\Tests\Integration;
 
+use Illuminate\Support\Facades\Crypt;
 use Speso\Ussd\Record;
 use Speso\Ussd\Tests\TestCase;
 
@@ -67,5 +68,32 @@ final class RecordTest extends TestCase
         $this->assertNull($record->locale());
         $record->setLocale('fr');
         $this->assertEquals('fr', $record->locale());
+    }
+
+    public function test_record_can_set_and_get_an_encrypted_value()
+    {
+        $record = new Record('array', '1234', 'abcd');
+        $record->setEncrypted('pin', '1234');
+
+        $this->assertEquals('1234', $record->getEncrypted('pin'));
+    }
+
+    public function test_record_stores_encrypted_values_as_ciphertext()
+    {
+        $record = new Record('array', '1234', 'abcd');
+        $record->setEncrypted('pin', '1234');
+
+        $raw = $record->get('pin');
+
+        $this->assertNotEquals('1234', $raw);
+        $this->assertEquals('1234', Crypt::decrypt($raw));
+    }
+
+    public function test_record_returns_default_for_a_missing_encrypted_value()
+    {
+        $record = new Record('array', '1234', 'abcd');
+
+        $this->assertNull($record->getEncrypted('pin'));
+        $this->assertEquals('none', $record->getEncrypted('pin', 'none'));
     }
 }

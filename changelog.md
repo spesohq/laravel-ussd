@@ -10,6 +10,7 @@ All notable changes to `laravel Ussd` will be documented in this file.
 - Add a `ussd:graph` artisan command that renders a Mermaid state diagram of a flow's `Transition`, `Back` and `Terminate` attributes.
 - Add built-in `Response` implementations for common gateways: `Speso\Ussd\Responses\AfricasTalkingResponse` (plain-text `CON`/`END`), `Speso\Ussd\Responses\NsanoResponse` (`USSDResp` JSON), `Speso\Ussd\Responses\NaloResponse` (`USERID`/`MSISDN`/`USERDATA`/`MSG`/`MSGTYPE` JSON), `Speso\Ussd\Responses\MoolreResponse` (`message`/`reply` JSON) and `Speso\Ussd\Responses\ArkeselResponse` (`sessionID`/`userID`/`msisdn`/`message`/`continueSession` JSON).
 - Add `Speso\Ussd\Events\StateEntered` and `Speso\Ussd\Events\SessionTerminated`, dispatched on every rendered state and once when a session ends (including via an unhandled exception), for logging or analytics listeners.
+- Add `Record::setEncrypted()` and `Record::getEncrypted()` to encrypt sensitive values (PINs, account numbers) at rest using the application's encryption key, instead of storing them as plain values in the cache store.
 
 ### Fixed
 - Fix the readme's Nsano configurator example, which referenced an undefined `$termination` variable and a nonexistent `setResponse()` method (the real method is `useResponse()`).

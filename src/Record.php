@@ -6,6 +6,7 @@ use DateInterval;
 use DateTimeInterface;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Crypt;
 
 class Record
 {
@@ -90,6 +91,22 @@ class Record
         return array_values(
             (array) $this->repository->getMultiple($this->ids($keys, $public), $default)
         );
+    }
+
+    public function setEncrypted(
+        string $key,
+        mixed $value,
+        null|DateInterval|DateTimeInterface|int $ttl = null,
+        bool $public = false
+    ): bool {
+        return $this->set($key, Crypt::encrypt($value), $ttl, $public);
+    }
+
+    public function getEncrypted(string $key, mixed $default = null, bool $public = false): mixed
+    {
+        $value = $this->get($key, null, $public);
+
+        return null === $value ? $default : Crypt::decrypt($value);
     }
 
     public function locale(): ?string

@@ -18,4 +18,9 @@ abstract class TestCase extends Testbench
     {
         return [UssdServiceProvider::class];
     }
+
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['config']->set('app.key', 'base64:'.base64_encode(random_bytes(32)));
+    }
 }
