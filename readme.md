@@ -18,7 +18,7 @@ Build Ussd (Unstructured Supplementary Service Data) applications with laravel w
 - **Localized menus** — build menu content from translation files, and persist a session's chosen language across requests.
 - **Session records** — a `Record` API (`get`/`set`/`increment`/`decrement`/...) for persisting data during a session, with optional cross-session persistence via `public: true`.
 - **Encrypted session data** — store sensitive values (PINs, account numbers) encrypted at rest in the session `Record`.
-- **Built-in gateway responses** — ships `Response` classes for AfricasTalking, Nsano, Nalo, Moolre, Arkesel and Speso; scaffold your own for anything else.
+- **Built-in gateway responses** — ships `Response` classes for Speso, AfricasTalking, Nsano, Nalo, Moolre and Arkesel; scaffold your own for anything else.
 - **Exception handling** — implement `ExceptionHandler` to turn an unhandled exception into a message the caller sees, instead of a dead session.
 - **Flow visualization** — `ussd:graph` renders a Mermaid state diagram of a flow straight from its attributes.
 - **Interactive simulation** — `ussd:simulate` lets you walk a flow in the terminal like a real handset, no gateway or phone required.
