@@ -8,12 +8,18 @@ Build Ussd (Unstructured Supplementary Service Data) applications with laravel w
 ## Features
 
 - **Menus as classes** — define screens as `State` classes with a fluent `Menu` builder, and route between them declaratively with `#[Transition]` attributes.
+- **Built-in decisions** — match input with `Equal`, `Between`, `In`, `Regex`, `IsNumeric` and more out of the box; scaffold custom ones with `ussd:decision`.
 - **Conditional branching** — `Action` classes decide the next state at runtime (e.g. after an HTTP call), for flows that can't be expressed as static attributes.
 - **Back navigation** — a `#[Back]` attribute with an automatic per-session history stack, no manual bookkeeping.
+- **Automatic pagination** — the `WithPagination` trait plus a `#[Paginate]` attribute page long listings without manual bookkeeping.
+- **Response truncation** — a `#[Truncate]` attribute caps how many characters a screen returns, so dynamic content can't blow past your gateway's character limit.
+- **Resumable sessions** — `useContinuingState()` lets a redial pick back up where a timed-out session left off, silently or after confirming with the user.
 - **Configurators** — group and share repeated setup (response format, exception handling, etc.) across controllers.
 - **Localized menus** — build menu content from translation files, and persist a session's chosen language across requests.
+- **Session records** — a `Record` API (`get`/`set`/`increment`/`decrement`/...) for persisting data during a session, with optional cross-session persistence via `public: true`.
 - **Encrypted session data** — store sensitive values (PINs, account numbers) encrypted at rest in the session `Record`.
 - **Built-in gateway responses** — ships `Response` classes for AfricasTalking, Nsano, Nalo, Moolre and Arkesel; scaffold your own for anything else.
+- **Exception handling** — implement `ExceptionHandler` to turn an unhandled exception into a message the caller sees, instead of a dead session.
 - **Flow visualization** — `ussd:graph` renders a Mermaid state diagram of a flow straight from its attributes.
 - **Interactive simulation** — `ussd:simulate` lets you walk a flow in the terminal like a real handset, no gateway or phone required.
 - **Flow linting** — `ussd:lint` catches dead ends, broken transitions, duplicate matches and unreachable states before they ship.
@@ -35,6 +41,17 @@ For older version use
 composer require speso/laravel-ussd:^2.0
 ```
 
+### Upgrading from `sparors/laravel-ussd`
+
+As of v3.0.0, this package is published as `speso/laravel-ussd` under the `Speso\Ussd` namespace. If you're on an older `sparors/laravel-ussd` install, upgrading requires two steps:
+
+1. Swap the composer dependency:
+   ``` bash
+   composer remove sparors/laravel-ussd
+   composer require speso/laravel-ussd:^3.0
+   ```
+2. Find and replace `Sparors\Ussd` with `Speso\Ussd` across your application (`use` statements, service provider references, config `vendor:publish` calls, etc.). There are no other API or behavior changes in this release, so no further code changes are required.
+
 ## Documentation
 
 See the [documentation][link-business-docs].
@@ -53,10 +70,10 @@ If you discover any security related issues, please email services@speso.co inst
 
 ## Credits
 
+Special thanks to [Isaac Sai][link-isaac-sai] for writing this package.
+
 - [Speso][link-author]
 - [All Contributors][link-contributors]
-
-Special thanks to [Isaac Sai][link-isaac-sai] for writing this package.
 
 ## License
 
