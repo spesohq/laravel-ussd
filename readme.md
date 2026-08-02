@@ -87,4 +87,4 @@ MIT. Please see the [license file](LICENSE) for more information.
 [link-author]: https://github.com/spesohq
 [link-contributors]: ../../contributors
 [link-isaac-sai]: https://github.com/CyberSai
-[link-business-docs]: https://business.speso.co/docs/laravel-ussd
+[link-business-docs]: https://docs.speso.co/laravel-ussd
