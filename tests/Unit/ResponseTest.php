@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Speso\Ussd\Responses\AfricasTalkingResponse;
 use Speso\Ussd\Responses\MoolreResponse;
 use Speso\Ussd\Responses\NsanoResponse;
+use Speso\Ussd\Responses\SpesoResponse;
 
 final class ResponseTest extends TestCase
 {
@@ -59,6 +60,26 @@ final class ResponseTest extends TestCase
 
         $this->assertEquals(
             ['message' => 'Bye', 'reply' => false],
+            $response->respond('Bye', true)
+        );
+    }
+
+    public function test_speso_response_uses_prompt_action_when_continuing()
+    {
+        $response = new SpesoResponse();
+
+        $this->assertEquals(
+            ['message' => 'Welcome', 'action' => 'prompt'],
+            $response->respond('Welcome', false)
+        );
+    }
+
+    public function test_speso_response_uses_end_action_when_terminating()
+    {
+        $response = new SpesoResponse();
+
+        $this->assertEquals(
+            ['message' => 'Bye', 'action' => 'end'],
             $response->respond('Bye', true)
         );
     }
