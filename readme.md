@@ -44,6 +44,8 @@ composer require speso/laravel-ussd:^2.0
 
 You'll find the V3 documentation in the [V3 README](./v3.readme.md) or the [GitHub wiki][link-wiki]. Archived V2 documentation is available in the [V2 README](./v2.readme.md).
 
+A browsable version of these docs is also available on the [Speso Business API docs site][link-business-docs].
+
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
@@ -76,3 +78,4 @@ MIT. Please see the [license file](LICENSE) for more information.
 [link-author]: https://github.com/spesohq
 [link-contributors]: ../../contributors
 [link-isaac-sai]: https://github.com/CyberSai
+[link-business-docs]: https://business.speso.co/docs/laravel-ussd
