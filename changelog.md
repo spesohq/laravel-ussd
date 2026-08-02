@@ -3,12 +3,14 @@
 All notable changes to `laravel Ussd` will be documented in this file.
 
 ## [Unreleased]
+
+## [v3.1.0] - 2026-08-02
 ### Added
 - Add `Menu::trans()`, `Menu::transLine()` and `Menu::transChoice()` for building menu content from translation files.
 - Add `Record::locale()` and `Record::setLocale()` to persist a session's chosen locale; `Ussd` applies it automatically, including within the same request when a `Transition` or `Action` callback sets it (so the very next screen renders in the new locale), and resets to the application's configured default locale for sessions that haven't set one, so a locale never leaks from one session into another in long-running processes (e.g. Octane, queue workers).
 - Add a `#[Back]` attribute for back navigation. `Ussd` maintains a per-session history stack, pushing the outgoing state on every `Transition` and popping it on a matching `Back`.
 - Add a `ussd:graph` artisan command that renders a Mermaid state diagram of a flow's `Transition`, `Back` and `Terminate` attributes.
-- Add built-in `Response` implementations for common gateways: `Speso\Ussd\Responses\AfricasTalkingResponse` (plain-text `CON`/`END`), `Speso\Ussd\Responses\NsanoResponse` (`USSDResp` JSON), `Speso\Ussd\Responses\NaloResponse` (`USERID`/`MSISDN`/`USERDATA`/`MSG`/`MSGTYPE` JSON), `Speso\Ussd\Responses\MoolreResponse` (`message`/`reply` JSON) and `Speso\Ussd\Responses\ArkeselResponse` (`sessionID`/`userID`/`msisdn`/`message`/`continueSession` JSON).
+- Add built-in `Response` implementations for common gateways: `Speso\Ussd\Responses\AfricasTalkingResponse` (plain-text `CON`/`END`), `Speso\Ussd\Responses\NsanoResponse` (`USSDResp` JSON), `Speso\Ussd\Responses\NaloResponse` (`USERID`/`MSISDN`/`USERDATA`/`MSG`/`MSGTYPE` JSON), `Speso\Ussd\Responses\MoolreResponse` (`message`/`reply` JSON), `Speso\Ussd\Responses\ArkeselResponse` (`sessionID`/`userID`/`msisdn`/`message`/`continueSession` JSON) and `Speso\Ussd\Responses\SpesoResponse` (`message`/`action` JSON for the Speso Business API).
 - Add `Speso\Ussd\Events\StateEntered` and `Speso\Ussd\Events\SessionTerminated`, dispatched on every rendered state and once when a session ends (including via an unhandled exception), for logging or analytics listeners.
 - Add `Record::setEncrypted()` and `Record::getEncrypted()` to encrypt sensitive values (PINs, account numbers) at rest using the application's encryption key, instead of storing them as plain values in the cache store.
 - Add a `ussd:simulate` artisan command that runs a flow interactively in the terminal like a real handset, so it can be walked through without a gateway, controller, or phone. Supports `--phone`, `--with`, `--configurator`, `--response` (to preview the gateway-formatted payload), `--continuing-mode`/`--continuing-state`/`--continuing-ttl` and `--store`, plus a `:restart` command at the reply prompt to simulate a dropped call for exercising `ContinuingMode::CONTINUE`/`CONFIRM`.
