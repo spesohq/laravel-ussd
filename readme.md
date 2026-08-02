@@ -61,6 +61,8 @@ If you discover any security related issues, please email services@speso.co inst
 - [Speso][link-author]
 - [All Contributors][link-contributors]
 
+Special thanks to [Isaac Sai][link-isaac-sai] for writing this package.
+
 ## License
 
 MIT. Please see the [license file](LICENSE) for more information.
@@ -73,3 +75,4 @@ MIT. Please see the [license file](LICENSE) for more information.
 [link-wiki]: https://github.com/spesohq/laravel-ussd/wiki
 [link-author]: https://github.com/spesohq
 [link-contributors]: ../../contributors
+[link-isaac-sai]: https://github.com/CyberSai
